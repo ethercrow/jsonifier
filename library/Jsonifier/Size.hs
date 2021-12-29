@@ -36,9 +36,5 @@ commas rowsAmount =
 stringBody :: Text -> Int
 stringBody =
   Text.destruct $ \arr off len ->
-    Ffi.countStringAllocationSize
-      arr
-      (fromIntegral off)
-      (fromIntegral len)
-      & unsafeDupablePerformIO
-      & fromIntegral
+    -- TODO(divanov): escaping
+    len

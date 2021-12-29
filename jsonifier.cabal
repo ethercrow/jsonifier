@@ -42,10 +42,10 @@ library
     cbits/json_encoding.c
   build-depends:
     base >=4.11 && <5,
-    bytestring >=0.10.10 && <0.12,
+    bytestring >=0.11.1.0 && <0.12,
     ptr-poker >=0.1.2.2 && <0.2,
     scientific >=0.3.6.2 && <0.4,
-    text >=1 && <2
+    text >=2 && <3
 
 test-suite demo
   type: exitcode-stdio-1.0

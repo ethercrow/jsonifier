@@ -24,10 +24,9 @@ false =
 
 {-# INLINE string #-}
 string :: Text -> Poke
-string =
-  Text.destruct $ \arr off len ->
-    Poke $ \ptr ->
-      Ffi.encodeString ptr arr (fromIntegral off) (fromIntegral len)
+string t =
+  -- TODO(divanov): escaping quotes and backslashes
+  word8 34 <> textUtf8 t <> word8 34
 
 -- |
 -- > "key":value
